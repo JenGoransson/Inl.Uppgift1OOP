@@ -3,15 +3,15 @@ package Sprint1.Inlämning1;
 import javax.swing.JOptionPane;
 
 public abstract class Vaxt implements VatskeBehov { //Interface.
-    protected String namn;
-    protected double hojd;
+    private String namn;  //Inkapsling - skyddade från direkt åtkomst utanför klassen.
+    private double hojd;
 
     public Vaxt(){}
     public Vaxt(String namn, double hojd){
         this.namn=namn;
         this.hojd=hojd;
     }
-    public String getNamn(){
+    public String getNamn(){  //Inkapsling - getters ger kontrollerad åtkomst.
         return namn;
     }
     public double getHojd(){
