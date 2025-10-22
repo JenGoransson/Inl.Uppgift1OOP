@@ -32,11 +32,12 @@ public class Member {
     public void saveVisit() {
         LocalDate today = LocalDate.now();
         String line = name + ";" + personalNumber + ";" + today;
-        String fileVisitCounter = "VisitCount_" + name + ".txt";
+        String fileVisitCounter = "Visit-count-" + name + ".txt";
 
+        //Skapar/öppnar upp en textfil med namned. True gör att det läggs till text, skrivs ej över
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileVisitCounter, true))) {
             writer.write(line);
-            writer.newLine();
+            writer.newLine(); //Gör att nästa reggade besök skrivs på egen rad.
             System.out.println("Besök registrerat för " + name + ".");
         } catch (IOException e) {
             System.err.println("Kunde inte registrera besök i filen: " + fileVisitCounter);
