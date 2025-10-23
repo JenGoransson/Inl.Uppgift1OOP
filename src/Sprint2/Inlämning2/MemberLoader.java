@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class MemberLoader {
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    public ArrayList<Member> loadMembers(String filePath) {
-        ArrayList<Member> members = new ArrayList<>();
+    public ArrayList <Member> loadMembers(String filePath) {
+        ArrayList <Member> members = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;

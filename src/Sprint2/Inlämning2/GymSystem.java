@@ -10,6 +10,15 @@ public class GymSystem {
         this.members = members;
     }
 
+    private Member findMember(String input) {
+        for (Member m : members) {
+            if (m.getName().equalsIgnoreCase(input) || m.getPersonalNumber().equals(input)) {
+                return m;
+            }
+        }
+        return null;
+    }
+
     public void run() {
         Scanner sc = new Scanner(System.in);
 
@@ -23,15 +32,6 @@ public class GymSystem {
             System.out.println(input + " är ej medlem");
         }
         sc.close();
-    }
-
-    private Member findMember(String input) {
-        for (Member m : members) {
-            if (m.getName().equalsIgnoreCase(input) || m.getPersonalNumber().equals(input)) {
-                return m;
-            }
-        }
-        return null;
     }
 }
 

@@ -21,7 +21,6 @@ public class Member {
 
     public String getName() { return name; }
     public String getPersonalNumber() { return personalNumber; }
-    public String getMembershipType() { return membershipType; }
 
     // Kollar om medlemmen är aktiv
     public boolean isActive() {
@@ -32,9 +31,9 @@ public class Member {
     public void saveVisit() {
         LocalDate today = LocalDate.now();
         String line = name + ";" + personalNumber + ";" + today;
-        String fileVisitCounter = "Visit-count-" + name + ".txt";
+        String fileVisitCounter = "Visit-count-" + personalNumber + ".txt";
 
-        //Skapar/öppnar upp en textfil med namned. True gör att det läggs till text, skrivs ej över
+        //Skapar/öppnar upp en textfil med personnr. True gör att det läggs till text, skrivs ej över
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileVisitCounter, true))) {
             writer.write(line);
             writer.newLine(); //Gör att nästa reggade besök skrivs på egen rad.
