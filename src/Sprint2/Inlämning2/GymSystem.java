@@ -18,7 +18,6 @@ public class GymSystem {
         }
         return null;
     }
-
     public void run() {
         Scanner sc = new Scanner(System.in);
 

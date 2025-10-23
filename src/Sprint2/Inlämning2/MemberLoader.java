@@ -18,7 +18,6 @@ public class MemberLoader {
 
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(";");
-                if (data.length < 7) continue; // Hoppa över rader som inte har tillräckligt med data
 
                 String name = data[0].trim();  //Hämtar information från rätt ställe i Arrayen
                 String personalNumber = data[3].trim();
